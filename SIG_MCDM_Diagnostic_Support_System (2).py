@@ -153,7 +153,7 @@ if submitted:
 
     # Save to memory and create download button
     buffer = io.BytesIO()
-    pdf.output(buffer)
+    buffer.write(pdf.output(dest='S').encode('latin-1'))
     buffer.seek(0)
     st.download_button(
         label="📥 Download Diagnosis Report (PDF)",
